@@ -1,15 +1,26 @@
+// ignore_for_file: use_key_in_widget_constructors
+
 import 'package:flutter/material.dart';
+import 'package:todo_app/app_them.dart';
+import 'package:todo_app/home_screen.dart';
 
 void main() {
-  runApp(const ToDoApp());
+  runApp(TodoApp());
 }
 
-class ToDoApp extends StatelessWidget {
-  const ToDoApp({super.key});
+class TodoApp extends StatelessWidget {
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp();
+    
+    return  MaterialApp(
+      debugShowCheckedModeBanner: false,
+      routes: {
+HomeScreen.routName : (_) => HomeScreen(),
+      },
+      theme: AppThem.lightTheme,
+      darkTheme: AppThem.darkTheme,
+      themeMode: ThemeMode.light,
+    );
   }
 }
