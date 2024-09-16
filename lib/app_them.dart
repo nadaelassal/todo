@@ -8,7 +8,7 @@ class AppThem {
   static Color green = Color(0xFF61E757);
   static Color grey = Color(0xFFC8C9CB);
   static Color red = Color(0xFFEC4B4B);
-
+  static Color black = Color(0x383838);
   static ThemeData lightTheme = ThemeData(
     primaryColor: primary,
     scaffoldBackgroundColor: backgroundLight,
@@ -30,6 +30,10 @@ class AppThem {
           width: 4,
         ),
       ),
+    ),
+    textTheme: TextTheme(
+      titleMedium: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+      titleSmall: TextStyle(fontSize: 14, fontWeight: FontWeight.w400),
     ),
   );
   static ThemeData darkTheme = ThemeData();

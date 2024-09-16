@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:todo_app/app_them.dart';
 import 'package:todo_app/tabs/settings/settings_tab.dart';
+import 'package:todo_app/tabs/tasks/add_task_bottom_sheet.dart';
 import 'package:todo_app/tabs/tasks/tasks_tab.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -26,7 +27,6 @@ class _HomeScreenState extends State<HomeScreen> {
         padding: EdgeInsets.zero,
         clipBehavior: Clip.antiAliasWithSaveLayer,
         color: AppThem.white,
-        
         child: BottomNavigationBar(
           currentIndex: currentTabIndex,
           onTap: (index) {
@@ -57,7 +57,10 @@ class _HomeScreenState extends State<HomeScreen> {
           Icons.add,
           size: 32,
         ),
-        onPressed: () {},
+        onPressed: () => showModalBottomSheet(
+          context: context,
+          builder: (_) => AddTaskBottomSheet(),
+        ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
